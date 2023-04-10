@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Panel de administrador | PerriLove</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/css_tienda/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand">PerriLove</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">
+                            <i class="bi bi-speedometer"></i> Panel</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#">
+                            <i class="bi bi-person-fill"></i> Clientes</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-archive-fill"></i> Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="agregar_prod.html"><i class="bi bi-plus-square"></i>
+                                    Agregar un producto</a></li>
+                            <li><a class="dropdown-item" href="productos.html"><i class="bi bi-list"></i> Lista de
+                                    productos</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#">
+                            <i class="bi bi-mailbox"></i> Despachos</a>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex">
+                    <button class="btn btn-danger" type="submit">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Cerrar sesión
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Panel de administrador</h1>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- LIST -->
+    <div class="container mt-5">
+        <h1>Últimas ventas</h1>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Fecha de venta</th>
+                    <th scope="col">Código de venta</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>06-04-2023</td>
+                    <td>SL0003</td>
+                    <td>Jacob</td>
+                    <td>Collar Premium</td>
+                    <td>$12.000</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Revisar <i
+                                class="bi bi-arrow-down-short"></i></button>
+                </tr>
+                <tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>06-04-2023</td>
+                    <td>SL0002</td>
+                    <td>Manuel</td>
+                    <td>Collar Premium</td>
+                    <td>$12.000</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Revisar <i
+                                class="bi bi-arrow-down-short"></i></button>
+                </tr>
+                </tr>
+                <tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>06-04-2023</td>
+                    <td>SL0001</td>
+                    <td>Karol G</td>
+                    <td>Collar Premium</td>
+                    <td>$12.000</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Revisar <i
+                                class="bi bi-arrow-down-short"></i></button>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; PerriLove</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
