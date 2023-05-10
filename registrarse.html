@@ -17,45 +17,106 @@
 
 <body>
 
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-5 px-lg-5">
-                <a class="navbar-brand" href="index.html">AnimalShow</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Inicio</a></li>
-                        <li class="nav-item "><a class="nav-link" href="productos.html">Tienda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="seguirpedido.html">Seguir mi pedido</a></li>
-                    </ul>
-    
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Carro
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-5 px-lg-5">
+            <a class="navbar-brand" href="index.html">AnimalShow</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Inicio</a></li>
+                    <li class="nav-item "><a class="nav-link" href="productos.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Cuenta
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                          <li><a class="dropdown-item" href="registrarse.html">Registrarse</a></li>
+                        </ul>
+                      </li>
+                </ul>
 
-    <!-- Header-->
-    <header class="bg-dark py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Registrarse</h1>
-                <p class="lead fw-normal text-white-50 mb-0">¡Registrarse con tus datos!</p>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Carro
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
             </div>
         </div>
-    </header>
+    </nav>
+
+ <!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg-primary">
+    <div class="container">
+        <h2 class="display-4 fw-bolder text-white">Registrarse</h2>
+        
+    </div> <!-- container //  -->
+    </section>
 
 
-    <!-- Carlos: Trabajando en esta sección -->
+    <!-- ============================ COMPONENT REGISTER   ================================= -->
+    <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+        <article class="card-body">
+            <header class="mb-4">
+                <h4 class="card-title">Información Personal</h4>
+            </header>
+            <form>
+                <div class="form-row">
+                    <div class="col form-group">
+                        <label>Nombres *</label>
+                        <input type="text" class="form-control" placeholder="" required>
+                    </div> <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label>Apellidos *</label>
+                        <input type="text" class="form-control" placeholder="" required>
+                    </div> <!-- form-group end.// -->
+                    <div class="col form-group">
+                        <label>Rut *</label>
+                        <input type="text" class="form-control" placeholder="" required>
+                    </div> <!-- form-group end.// -->
+                </div> <!-- form-row end.// -->
+
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" class="form-control" placeholder="" required>
+                    <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+                </div> <!-- form-group end.// -->
+                <div class="form-group">
+                    <label class="custom-control custom-radio custom-control-inline">
+                        <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
+                        <span class="custom-control-label"> Masculino </span>
+                    </label>
+                    <label class="custom-control custom-radio custom-control-inline">
+                        <input class="custom-control-input" type="radio" name="gender" value="option2">
+                        <span class="custom-control-label"> Femenino </span>
+                    </label>
+                </div> <!-- form-group end.// -->
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Contraseña *</label>
+                        <input class="form-control" type="password" required>
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group col-md-12">
+                        <label>Repetir contraseña *</label>
+                        <input class="form-control" type="password">
+                    </div> <!-- form-group end.// -->
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Registrarse </button>
+                </div> <!-- form-group// -->
+
+            </form>
+        </article><!-- card-body.// -->
+    </div> <!-- card .// -->
+    <p class="text-center mt-4">¿Ya tienes una cuenta? <a href="login.html">Inciar sesión</a></p>
+    <br><br>
+    <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
 
 
 

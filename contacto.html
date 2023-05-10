@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Contacto - AnimalShow</title>
+    <title>AnimalShow | Contacto</title>
     <!-- Favicon-->
     <link href="img/favicon.png" rel="shortcut icon" type="image/x-icon">
     <!-- Bootstrap icons-->
@@ -27,9 +27,16 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Inicio</a></li>
                 <li class="nav-item "><a class="nav-link" href="productos.html">Tienda</a></li>
-                <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="seguirpedido.html">Seguir mi pedido</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Cuenta
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                      <li><a class="dropdown-item" href="registrarse.html">Registrarse</a></li>
+                    </ul>
+                  </li>
             </ul>
 
             <form class="d-flex">
@@ -42,132 +49,142 @@
         </div>
     </div>
 </nav>
-<!-- Header-->
-<header class="bg-dark py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Contacto</h1>
-            <p class="lead fw-normal text-white-50 mb-0"></p>
-        </div>
-    </div>
-</header>
-
-<div class="container mt-5">
-    <h1>Ingresa tus datos</h1>
-</div>
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg-primary">
+    <div class="container">
+        <h2 class="display-4 fw-bolder text-white">Contacto</h2>
+        
+    </div> <!-- container //  -->
+    </section>
 
 
-<div class="container mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group mb-3">
-                <label class="label-b">Nombre<span class="rd-point"> *</span></label>
-                <input type="text" class="form-control" id="Nombre" required>
-            </div>
-        </div>
 
-        <div class="col-md-6">
-            <div class="form-group mb-6">
-                <label class="label-b">Email<span class="rd-point"> *</span></label>
-                <input type="email" class="form-control" id="Email" required>
-            </div>
-        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <h2>Escribe tus datos</h2>
+                <!-- Formulario con los datos -->
+                <form id="contactoForm">
+                    <div class="row">
+                        <div class="col-sm-6">
 
-        <div class="col-md-6">
-            <div class="form-group mb-3">
-                <label class="label-b">Teléfono<span class="rd-point"> *</span></label>
-                <input type="number" class="form-control" id="Precio" required>
-            </div>
-        </div>
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <label>Nombre *</label>
+                                <input id="nombre" class="form-control" type="text" name="nombre" required>
+                            </div>
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label>Email *</label>
+                                <input id="email" class="form-control" type="email" name="email" required>
+                            </div>
+                            <!-- Asunto -->
+                            <div class="form-group">
+                                <label>Asunto </label>
+                                <input id="motivo" class="form-control" type="text" name="motivo">
+                            </div>
+                        </div>
 
-        <div class="col-md-3">
-            <div class="form-group mb-3">
-                <label class="label-b">Comentarios<span class="rd-point"> *</span></label>
-                <textarea class="form-control rounded-0" id="comentarios" cols="55" rows="2"></textarea>
-            </div>
+                        <div class="col-sm-6">
+                            <!-- Pedido -->
+                            <div class="form-group">
+                                <label>Nº de Pedido (opcional)</label>
+                                <input id="pedido" class="form-control" type="text" name="pedido">
+                            </div>
+                        </div>
 
+                        <div class="col-12">
+                            <label for="areaMensaje" class="form-label">Mensaje *</label>
+                            <textarea class="form-control" id="areaMensaje"  rows="3" required></textarea>
+                        </div> 
 
-        </div>
-        <button type="button" class="btn btn-success">Enviar comentarios</button>
-    </div>
-</div>
-</div>
-</div>
+                         <div class="col-3 mb-3 mt-3">
+                            <button type="submit" class="btn btn-success">
+                                Enviar mensaje
+                            </button>
+                        </div>
+                    </div>
+                </form>
 
-    <!-- ========================= FOOTER ========================= -->
-    <div class="container-fluid">
-
-        <div class="row p-5 pb-2 bg-black text-white">
-
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h3">AnimalShow</p>
-                <div class="mb-2">
-                    <p class="text-secondary"><i class="bi bi-house-door-fill"></i> Cobertura: Todas las comunas de
-                        Santiago.</p>
-                </div>
-                <div class="mb-2">
-                    <p class="text-secondary"><i class="bi bi-phone"></i> WhatsApp: +56 9 12345678</p>
-                </div>
-                <div class="mb-2">
-                    <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-envelope"></i>
-                        contacto@animalshow.cl</a>
-                </div>
-
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h5 mb-3">Horarios de atencion</p>
-                <p class="text-secondary">En nuestra tienda virtual podrás comprar las 24 horas del día, los 365 días
-                    del año. Estaremos siempre atentos a tus necesidades y requerimientos, intentando responder a ellos
-                    en el menor tiempo posible.</p>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h5 mb-3">Links</p>
-                <div class="mb-2">
-                    <a href="nosotros.html" class="text-secondary text-decoration-none"><i
-                            class="bi bi-chevron-right"></i> Quienes Somos</a>
-                </div>
-
-                <div class="mb-2">
-                    <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-chevron-right"></i>
-                        Despachos</a>
-                </div>
-
-                <div class="mb-2">
-                    <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-chevron-right"></i> Cambios
-                        y Devoluciones</a>
-                </div>
-
-                <div class="mb-2">
-                    <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-chevron-right"></i> Términos
-                        y Condiciones</a>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 col-lg-3">
-                <p class="h5 mb-3">Redes Sociales</p>
-                <div class="mb-2">
-                    <a href="#" class="text-secondary text-decoration-none"> <i class="bi bi-facebook"></i> Facebook</a>
-                </div>
-
-                <div class="mb-2">
-                    <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-instagram"></i>
-                        Instagram</a>
-                </div>
-
-                <div class="mb-2">
-                    <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-twitter"></i> Twitter</a>
-                </div>
-            </div>
-
-            <div class="col-xs-12 pt-4">
-                <p class="text-secondary text-center">&copy; 2023 Copyright All Right Reserved by PerriLove</p>
             </div>
         </div>
     </div>
 
-    <!-- ========================= END FOOTER ========================= -->
+
+<!-- ========================= FOOTER ========================= -->
+<div class="container-fluid">
+
+    <div class="row p-5 pb-2 bg-black text-white">
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h3">AnimalShow</p>
+            <div class="mb-2">
+                <p class="text-secondary"><i class="bi bi-house-door-fill"></i> Cobertura: Todas las comunas de
+                    Santiago.</p>
+            </div>
+            <div class="mb-2">
+                <p class="text-secondary"><i class="bi bi-phone"></i> WhatsApp: +56 9 12345678</p>
+            </div>
+            <div class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-envelope"></i>
+                    contacto@animalshow.cl</a>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5 mb-3">Horarios de atencion</p>
+            <p class="text-secondary">En nuestra tienda virtual podrás comprar las 24 horas del día, los 365 días
+                del año. Estaremos siempre atentos a tus necesidades y requerimientos, intentando responder a ellos
+                en el menor tiempo posible.</p>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5 mb-3">Links</p>
+            <div class="mb-2">
+                <a href="nosotros.html" class="text-secondary text-decoration-none"><i class="bi bi-chevron-right"></i>
+                    Quienes Somos</a>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-chevron-right"></i>
+                    Despachos</a>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-chevron-right"></i> Cambios
+                    y Devoluciones</a>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-chevron-right"></i> Términos
+                    y Condiciones</a>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <p class="h5 mb-3">Redes Sociales</p>
+            <div class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none"> <i class="bi bi-facebook"></i> Facebook</a>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-instagram"></i>
+                    Instagram</a>
+            </div>
+
+            <div class="mb-2">
+                <a href="#" class="text-secondary text-decoration-none"><i class="bi bi-twitter"></i> Twitter</a>
+            </div>
+        </div>
+
+        <div class="col-xs-12 pt-4">
+            <p class="text-secondary text-center">&copy; 2023 Copyright All Right Reserved by PerriLove</p>
+        </div>
+    </div>
+</div>
+
+<!-- ========================= END FOOTER ========================= -->
 
 
 
