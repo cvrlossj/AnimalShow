@@ -12683,3 +12683,13 @@ small{
 .error{
     color: red;
 }
+
+
+body.darkmode{
+    background-color: rgba(32, 32, 44);
+    color: white;
+}
+
+.darkmode h5{
+    color: black;
+}
