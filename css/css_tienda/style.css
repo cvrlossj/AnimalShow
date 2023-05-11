@@ -12653,6 +12653,7 @@ fieldset:disabled .btn {
 
 /* ================== PAGES =================== */
 /* ================ PAGES HEADER ================== */
+
 .section-pagetop {
     padding: 45px 0;
 }
@@ -12660,3 +12661,25 @@ fieldset:disabled .btn {
 .title-page {
     color: #212529;
   }
+
+.container-top{
+    padding: 5px 0;
+}
+
+small{
+    color: red;
+    font-weight: bolder;
+}
+
+#reloj,p{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nav-link{
+    font-weight: bolder;
+}
+
+.error{
+    color: red;
+}

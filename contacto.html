@@ -16,6 +16,7 @@
 </head>
 
 
+
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
@@ -36,7 +37,8 @@
                       <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
                       <li><a class="dropdown-item" href="registrarse.html">Registrarse</a></li>
                     </ul>
-                  </li>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="panel.html">Administrador</a></li>
             </ul>
 
             <form class="d-flex">
@@ -70,18 +72,21 @@
 
                             <!-- Nombre -->
                             <div class="form-group">
-                                <label>Nombre *</label>
-                                <input id="nombre" class="form-control" type="text" name="nombre" required>
+                                <label for="txtNombre">Nombre <small>*</small></label>
+                                <input onblur="validarForm()" id="txtNombre" class="form-control" type="text" name="nombre" required>
+                                <small id="valNombre">Debe ingresar su nombre</small>
                             </div>
                             <!-- Email -->
                             <div class="form-group">
-                                <label>Email *</label>
-                                <input id="email" class="form-control" type="email" name="email" required>
+                                <label for="txtEmail">Email <small>*</small></label>
+                                <input onblur="validarForm()" id="txtEmail" class="form-control" type="email" name="email" required>
+                                <small id="valEmail">Debe ingresar su email</small>
                             </div>
                             <!-- Asunto -->
                             <div class="form-group">
-                                <label>Asunto </label>
-                                <input id="motivo" class="form-control" type="text" name="motivo">
+                                <label for="txtAsunto">Asunto <small>*</small></label>
+                                <input onblur="validarForm()" id="txtAsunto" class="form-control" type="text" required>
+                                <small id="valAsunto">Debe ingresar el asunto</small>
                             </div>
                         </div>
 
@@ -94,8 +99,9 @@
                         </div>
 
                         <div class="col-12">
-                            <label for="areaMensaje" class="form-label">Mensaje *</label>
-                            <textarea class="form-control" id="areaMensaje"  rows="3" required></textarea>
+                            <label for="txtMensaje" class="form-label">Mensaje <small>*</small></label>
+                            <textarea onblur="validarForm()" id="txtMensaje" class="form-control" rows="3" required></textarea>
+                            <small id="valMensaje">Debe ingresar un mensaje</small>
                         </div> 
 
                          <div class="col-3 mb-3 mt-3">
@@ -192,6 +198,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+<script src="js/forms.js"></script>
 </body>
 
 </html>

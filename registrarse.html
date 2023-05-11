@@ -30,14 +30,16 @@
                     <li class="nav-item "><a class="nav-link" href="productos.html">Tienda</a></li>
                     <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Cuenta
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Cuenta
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
-                          <li><a class="dropdown-item" href="registrarse.html">Registrarse</a></li>
+                            <li><a class="dropdown-item" href="login.html">Iniciar sesión</a></li>
+                            <li><a class="dropdown-item" href="registrarse.html">Registrarse</a></li>
                         </ul>
-                      </li>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="panel.html">Administrador</a></li>
                 </ul>
 
                 <form class="d-flex">
@@ -51,12 +53,12 @@
         </div>
     </nav>
 
- <!-- ========================= SECTION PAGETOP ========================= -->
-<section class="section-pagetop bg-primary">
-    <div class="container">
-        <h2 class="display-4 fw-bolder text-white">Registrarse</h2>
-        
-    </div> <!-- container //  -->
+    <!-- ========================= SECTION PAGETOP ========================= -->
+    <section class="section-pagetop bg-primary">
+        <div class="container">
+            <h2 class="display-4 fw-bolder text-white">Registrarse</h2>
+
+        </div> <!-- container //  -->
     </section>
 
 
@@ -66,26 +68,29 @@
             <header class="mb-4">
                 <h4 class="card-title">Información Personal</h4>
             </header>
-            <form>
+            <form action="" id="miFormulario">
                 <div class="form-row">
+                    <!-- Nombres -->
                     <div class="col form-group">
-                        <label>Nombres *</label>
-                        <input type="text" class="form-control" placeholder="" required>
-                    </div> <!-- form-group end.// -->
+                        <label for="txtNombre">Nombre <small>*</small></label>
+                        <input name="txtNombre" id="txtNombre" type="text" class="form-control">
+                    </div>
+
                     <div class="col form-group">
-                        <label>Apellidos *</label>
-                        <input type="text" class="form-control" placeholder="" required>
-                    </div> <!-- form-group end.// -->
+                        <label for="txtApellido">Apellido <small>*</small></label>
+                        <input name="txtApellido" id="txtApellido" type="text" class="form-control">
+                    </div>
+
                     <div class="col form-group">
-                        <label>Rut *</label>
-                        <input type="text" class="form-control" placeholder="" required>
-                    </div> <!-- form-group end.// -->
-                </div> <!-- form-row end.// -->
+                        <label for="txtRut">Rut <small>*</small></label>
+                        <input name="txtRut" id="txtRut" type="text" class="form-control">
+                    </div>
+                </div>
 
                 <div class="form-group">
-                    <label>Email *</label>
-                    <input type="email" class="form-control" placeholder="" required>
-                    <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+                    <label for="txtEmail">Email <small>*</small></label>
+                    <input name="txtEmail" id="txtEmail" type="text" class="form-control">
+
                 </div> <!-- form-group end.// -->
                 <div class="form-group">
                     <label class="custom-control custom-radio custom-control-inline">
@@ -99,16 +104,16 @@
                 </div> <!-- form-group end.// -->
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label>Contraseña *</label>
-                        <input class="form-control" type="password" required>
+                        <label>Contraseña <small>*</small></label>
+                        <input class="form-control" type="password">
                     </div> <!-- form-group end.// -->
                     <div class="form-group col-md-12">
-                        <label>Repetir contraseña *</label>
+                        <label>Repetir contraseña <small>*</small></label>
                         <input class="form-control" type="password">
                     </div> <!-- form-group end.// -->
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Registrarse </button>
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse </button>
                 </div> <!-- form-group// -->
 
             </form>
@@ -197,7 +202,9 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/formsquery.js"></script>
 </body>
 
 </html>
