@@ -15,6 +15,21 @@
     <link rel="stylesheet" href="/css/css_tienda/style.css">
 </head>
 
+
+<header class="section-header">
+    <!-- Hora-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-black">
+        <div class="container px-5 px-lg-5">
+            <h2 class="navbar-brand text-white" id="reloj"></h2>
+
+            <div class="d-flex text-white">
+                <p>La temperatura actual es: <i class="bi bi-thermometer"></i><span class="temp" style="font-weight: bolder;"></span></p>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
 <body>
 
     <!-- Navigation-->
@@ -101,16 +116,18 @@
                         <input class="custom-control-input" type="radio" name="gender" value="option2">
                         <span class="custom-control-label"> Femenino </span>
                     </label>
-                </div> <!-- form-group end.// -->
+                </div> 
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label>Contraseña <small>*</small></label>
-                        <input class="form-control" type="password">
-                    </div> <!-- form-group end.// -->
+                        <label for="txtPassword">Contraseña <small>*</small></label>
+                        <input name="txtPassword" id="txtPassword" class="form-control" type="password">
+                    </div> 
+
                     <div class="form-group col-md-12">
-                        <label>Repetir contraseña <small>*</small></label>
-                        <input class="form-control" type="password">
-                    </div> <!-- form-group end.// -->
+                        <label for="txtConfirmPass">Repetir contraseña <small>*</small></label>
+                        <input name="txtConfirmPass" id="txtConfirmPass" class="form-control" type="password">
+                    </div> 
+
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Registrarse </button>
@@ -205,6 +222,7 @@
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/formsquery.js"></script>
+    <script src="js/funciones.js"></script>
 </body>
 
 </html>

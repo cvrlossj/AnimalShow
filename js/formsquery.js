@@ -23,7 +23,13 @@ $(function(){
                 required: true,
                 minlength: 5,
                 email: true
-            }      
+            },
+            txtPassword:{
+                required: true
+            },
+            txtConfirmPass:{
+                required: true
+            }
         },
 
 
@@ -43,6 +49,12 @@ $(function(){
             txtEmail:{
                 required: "Campo obligatorio",
                 email: "Ingrese un email válido"
+            },
+            txtPassword:{
+                required: "Campo obligatorio"
+            },
+            txtConfirmPass:{
+                required: "Campo obligatorio"
             }
         }
     })
@@ -92,7 +104,8 @@ $(function(){
             }
         }
     })
+
+
+
 })
-
-
 

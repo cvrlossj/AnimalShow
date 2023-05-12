@@ -1,4 +1,4 @@
-// Hora actual
+// Reloj en tiempo real
 function mostrarHora() {
     var fecha = new Date();
     var hora = fecha.getHours();
@@ -18,19 +18,65 @@ setInterval(mostrarHora, 1000);
 
 
 
-// Api - Weather
+// Api - Weather (Obtener la temperatura)
 
-const API_KEY = '6cd2f110df5f8fd17f5d67e45db69716';
-const API_URL = 'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}'
+let lon;
+//creamos varible de longitud
+let lat;
+//creamos variable de latitud
+let temperatura = document.querySelector(".temp")
+//aqui se obtiene el elemento de html temp para asi rellenarlo posteriormente con la api
+let loc = document.querySelector(".location")
+//locacion acutal que tendremos
+const kelvin = 273.15
 
-fetch(API_URL)
-.then(response => response.json())
-.then(data => {
-    const temperatura = data.main.temp;
 
-    document.getElementById('temperatura').textContent = temperatura;
+window.addEventListener("load",()=>{
+
+
+if(navigator.geolocation){
+//si navegador que se esta utilizando tiene una locacion
+
+navigator.geolocation.getCurrentPosition((position) =>{
+//metodo para obtener la posicion actual
+// esto es para definir las variables de logitud y latitud
+
+
+        console.log(position);
+        lon = position.coords.longitude;
+        lat = position.coords.latitude;
+
+
+//declarar constante que sera la id de la api
+
+const api ="6cd2f110df5f8fd17f5d67e45db69716";
+
+const url_api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&` + `lon=${lon}&appid=${api}`;
+
+//para hacer peticiones
+fetch(url_api).then((response)=>{
+
+    return response.json();
 })
-.catch(error => console.log(error));
+.then((data)=>{
+
+console.log("esta es la data:");
+console.log(data);
+
+//esto para reemplazar las variables que vienen del html
+temperatura.textContent = Math.floor(data.main.temp - kelvin) +"°C";
+
+loc.textContent =data.name + "," +data.sys.country;
+});
+});
+}
+});
+
+
+
+
+
+
 
 
 // Modo oscuro

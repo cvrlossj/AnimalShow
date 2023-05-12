@@ -14,21 +14,18 @@
     <link rel="stylesheet" href="/css/css_tienda/style.css">
 </head>
 
+<body>
 <!-- Hora -->
+
 <header class="section-header">
-    <body>
         <!-- Hora-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light bg-black">
             <div class="container px-5 px-lg-5">
                 <h2 class="navbar-brand text-white" id="reloj"></h2>
 
-                <div class="d-flex">
-                    <i class="bi bi-thermometer"></i>
-                    <p>La temperatura actual es: <span id="temperatura"></span></p>
+                <div class="d-flex text-white">
+                    <p>La temperatura actual es: <i class="bi bi-thermometer"></i><span class="temp" style="font-weight: bolder;"></span></p>
                 </div>
-                </div>
-
-                
             </div>
         </nav>
 </header>
@@ -68,7 +65,6 @@
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
-                            Carro
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
@@ -106,10 +102,11 @@
         </button>
       </div>
 
+
       <!-- Section -->
     <section class="">
         <div class="container px-4 px-lg-5 mt-5">
-            <h2 class="mb-5">Productos populares</h2>
+            <h2 class="mb-5" style="font-weight: bolder;">Productos populares</h2>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <div class="col mb-5">
                     <div class="card h-100">
@@ -126,8 +123,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="bandana.html">Ver
-                                    opciones</a></div>
+                            <div class="text-center"><a class="btn btn-success mt-auto" href="bandana.html">Agregar al Carro <i class="bi bi-caret-right-fill"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -149,7 +145,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver opciones</a>
+                            <div class="text-center"><a class="btn btn-success mt-auto" href="#">Agregar al Carro <i class="bi bi-caret-right-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -160,19 +156,19 @@
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sku
                         </div>
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <img class="card-img-top" src="https://www.pethome.cl/imagenes/productos/5555-min_1.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Sale Item</h5>
+                                <h5 class="fw-bolder">Cama de Felpa Para Gatos O Cachorros XS</h5>
                                 <!-- Product price-->
-                                <<span class="text-muted">$50.00</span>
+                                <span class="text-muted">$50.000</span>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ver opciones</a>
+                            <div class="text-center"><a class="btn btn-success mt-auto" href="#">Agregar al Carro <i class="bi bi-caret-right-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -180,19 +176,14 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <img class="card-img-top" src="https://www.pethome.cl/imagenes/productos/5056-min.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Popular Item</h5>
+                                <h5 class="fw-bolder">Eukanuba Premium Performance 18 KG - 30/20</h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
                                 <span class="text-muted">$50.00</span>
@@ -200,7 +191,7 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            <div class="text-center"><a class="btn btn-success mt-auto" href="#">Agregar al Carro <i class="bi bi-caret-right-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -211,19 +202,19 @@
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale
                         </div>
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <img class="card-img-top" src="https://www.pethome.cl/imagenes/productos/4278-min.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Sale Item</h5>
+                                <h5 class="fw-bolder">GiGwi Casa Iglu Gris / Rosado</h5>
                                 <!-- Product price-->
                                 <span class="text-muted">$50.00</span>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                            <div class="text-center"><a class="btn btn-success mt-auto" href="#">Agregar al Carro <i class="bi bi-caret-right-fill"></i></a>
                             </div>
                         </div>
                     </div>
@@ -231,19 +222,19 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <img class="card-img-top" src="https://www.pethome.cl/imagenes/productos/4955-min.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <!-- Product name-->
-                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <h5 class="fw-bolder">Rascador Torre para Gatos con dos casas y un gran mirador</h5>
                                 <!-- Product price-->
                                 <span class="text-muted">$50.00</span>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                            <div class="text-center"><a class="btn btn-success mt-auto" href="#">Agregar al Carro <i class="bi bi-caret-right-fill"></i></a>
                             </div>
                         </div>
                     </div>

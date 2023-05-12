@@ -12688,8 +12688,10 @@ small{
 body.darkmode{
     background-color: rgba(32, 32, 44);
     color: white;
+    transition: 1s;
 }
 
 .darkmode h5{
     color: black;
 }
+
