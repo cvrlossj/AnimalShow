@@ -76,9 +76,6 @@ loc.textContent =data.name + "," +data.sys.country;
 
 
 
-
-
-
 // Modo oscuro
 const bdark = document.querySelector('#bdark');
 const body= document.querySelector('body');
@@ -103,4 +100,3 @@ function load(){
 function store(value){
     localStorage.setItem('darkmode',value);
 }
-
