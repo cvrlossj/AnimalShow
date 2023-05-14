@@ -25,6 +25,7 @@ function agregarAlCarrito(producto, precio) {
     // Si el producto no está en el carrito, agregarlo con cantidad 1
     if (!encontrado) {
       carrito.push({ producto: producto, precio: precio, cantidad: 1 });
+      alert("Producto agregado correctamente")
     }
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
