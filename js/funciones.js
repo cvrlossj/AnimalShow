@@ -1,3 +1,20 @@
+$(document).ready(function(){
+
+});
+
+
+// Ocultar Elemento publicidad - sin actualizar la página 
+$("#ocultar").on("click",function(){
+    $("#pb").slideUp();
+})
+
+// Mostrar Elemento publicidad - sin actualizar la página 
+$("#mostrar").on("click",function(){
+    $("#pb").slideDown();
+})
+
+
+
 // Reloj en tiempo real
 function mostrarHora() {
     var fecha = new Date();
@@ -100,3 +117,11 @@ function load(){
 function store(value){
     localStorage.setItem('darkmode',value);
 }
+
+
+// Clase a un elemento html
+
+var boton = document.getElementById("ocultar");
+
+boton.classList.add("boton-ocultar");
+

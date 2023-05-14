@@ -54,16 +54,40 @@
             </ul>
 
             <form class="d-flex">
-                <button type="button" class="btn btn-outline-dark">
-
-                    <a class="nav-link" href="carro.html">Carro</a>
+                <button type="button" class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <i class="bi-cart-fill me-1"></i>
-
                 </button>
             </form>
         </div>
     </div>
 </nav>
+
+
+<!-- ========================= VENTA DEL CANVA - CARRITO DE COMPRA========================= -->
+<div class="carrito">
+    <div class="offcanvas offcanvas-end text-black" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carro de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div id="carrito">
+                    <h2>Carrito</h2>
+                    <ul id="lista-carrito"></ul>
+                    <p>Total: $<span id="total-carrito">0</span></p>
+                    <button onclick="vaciarCarrito()">Vaciar carrito</button>
+                    </div>
+                </div>    
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+
+
 <!-- ========================= SECTION PAGETOP ========================= -->
 <section class="section-pagetop bg-primary">
     <div class="container">
@@ -212,6 +236,7 @@
 <!-- Core theme JS-->
 <script src="js/forms.js"></script>
 <script src="js/funciones.js"></script>
+<script src="js/carrito.js"></script>
 </body>
 
 </html>
