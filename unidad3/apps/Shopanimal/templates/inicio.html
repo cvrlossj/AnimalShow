@@ -1,0 +1,106 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+
+{% block header %}
+{% endblock %}
+
+
+
+{% block body %}
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.pethome.cl/imagenes/slider/slide-2741683049337.jpg.webp" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://www.pethome.cl/imagenes/slider/slide-2731682712618.jpg.webp" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://www.pethome.cl/imagenes/slider/slide-2641677181734.jpg.webp" class="d-block w-100" alt="...">
+            </div>     
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <!-- ========================= PUBLICIDAD ========================= -->
+    
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2>Noticias</h2>
+        <div class="card text-center" id="pb">
+            <div class="card-header text-black">
+                AnimalShow
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">¡Productos en oferta!</h5>
+                <p class="card-text text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus nostrum natus fugit dolorem tempore adipisci reiciendis itaque perspiciatis consequuntur debitis?</p>
+            </div>
+        </div>
+
+        <div class="col mt-2">
+            <button id="ocultar">Ocultar</button>
+            <button id="mostrar" class="btn btn-primary">Mostrar</button>
+        </div>
+    </div>
+
+    <!-- ========================= FINAL - PUBLICIDAD ========================= -->
+
+
+    <!-- Section -->
+    <section class="">
+        <div class="container px-4 px-lg-5 mt-5">
+            <h2 class="mb-5">Productos populares</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- SKU badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sku: 01</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://www.pethome.cl/imagenes/productos/2279.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Bandanas de colores para perros</h5>
+                                <!-- Product price-->
+                                <span class="text-muted">$5.500</span>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <button onclick="agregarAlCarrito('Bandana para perros', 5500)"
+                                class="resaltado">Agregar al carrito 
+                                <i class="bi bi-caret-right-fill"></i></button></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}
+
+
+
+
+{% block script %}
+    
+{% endblock %}
