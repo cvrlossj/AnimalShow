@@ -2,7 +2,6 @@ $(document).ready(function(){
 
 });
 
-
 // Ocultar Elemento publicidad - sin actualizar la página 
 $("#ocultar").on("click",function(){
     $("#pb").slideUp();
