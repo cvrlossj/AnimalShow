@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def cargarInicio(request):
     return render(request,"inicio.html")
+
+def cargarContacto(request):
+    return render(request,"contacto.html")
