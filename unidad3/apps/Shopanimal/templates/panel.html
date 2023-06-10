@@ -1,0 +1,81 @@
+{% extends './baseAdmin.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<title>AnimalShow | Panel de administrador</title>
+{% endblock %} 
+
+
+{% block body %}
+<header class="bg-primary py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Panel de administrador</h1>
+        </div>
+    </div>
+</header>
+
+
+<!-- LIST -->
+<div class="container mt-5">
+    <h1>Últimas ventas</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fecha de venta</th>
+                <th scope="col">Código de venta</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Total</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>06-04-2023</td>
+                <td>SL0003</td>
+                <td>Jacob</td>
+                <td>Collar Premium</td>
+                <td>$12.000</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Revisar <i
+                            class="bi bi-arrow-down-short"></i></button>
+            </tr>
+            <tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>06-04-2023</td>
+                <td>SL0002</td>
+                <td>Manuel</td>
+                <td>Collar Premium</td>
+                <td>$12.000</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Revisar <i
+                            class="bi bi-arrow-down-short"></i></button>
+            </tr>
+            </tr>
+            <tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>06-04-2023</td>
+                <td>SL0001</td>
+                <td>Karol G</td>
+                <td>Collar Premium</td>
+                <td>$12.000</td>
+                <td>
+                    <button type="button" class="btn btn-primary">Revisar <i
+                            class="bi bi-arrow-down-short"></i></button>
+            </tr>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

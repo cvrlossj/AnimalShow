@@ -1,5 +1,3 @@
-
-
 // Validaciones con JavaScript - Contacto
 document.getElementById("valNombre").style.display = "none";
 document.getElementById("valEmail").style.display = "none";

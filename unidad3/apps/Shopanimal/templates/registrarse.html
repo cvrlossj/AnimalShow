@@ -1,0 +1,87 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<title>AnimalShow | Crear una cuenta</title>
+{% endblock %} 
+
+{% block body %}
+ <!-- ========================= SECTION PAGETOP ========================= -->
+ <section class="section-pagetop bg-primary">
+    <div class="container">
+        <h2 class="display-4 fw-bolder text-white">Registrarse</h2>
+
+    </div> <!-- container //  -->
+</section>
+
+
+<!-- ============================ COMPONENT REGISTER   ================================= -->
+<div class="card mx-auto mb-5" style="max-width:520px; margin-top:40px;">
+    <article class="card-body">
+        <header class="mb-4">
+            <h4 class="card-title">Información Personal</h4>
+        </header>
+        <form action="" id="miFormulario">
+            <div class="form-row">
+                <!-- Nombres -->
+                <div class="col form-group">
+                    <label for="txtNombre">Nombre <small>*</small></label>
+                    <input name="txtNombre" id="txtNombre" type="text" class="form-control">
+                </div>
+
+                <div class="col form-group">
+                    <label for="txtApellido">Apellido <small>*</small></label>
+                    <input name="txtApellido" id="txtApellido" type="text" class="form-control">
+                </div>
+
+                <div class="col form-group">
+                    <label for="txtRut">Rut <small>*</small></label>
+                    <input name="txtRut" id="txtRut" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="txtEmail">Email <small>*</small></label>
+                <input name="txtEmail" id="txtEmail" type="text" class="form-control">
+
+            </div> <!-- form-group end.// -->
+            <div class="form-group">
+                <label class="custom-control custom-radio custom-control-inline">
+                    <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
+                    <span class="custom-control-label"> Masculino </span>
+                </label>
+                <label class="custom-control custom-radio custom-control-inline">
+                    <input class="custom-control-input" type="radio" name="gender" value="option2">
+                    <span class="custom-control-label"> Femenino </span>
+                </label>
+            </div> 
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="txtPassword">Contraseña <small>*</small></label>
+                    <input name="txtPassword" id="txtPassword" class="form-control" type="password">
+                </div> 
+
+                <div class="form-group col-md-12">
+                    <label for="txtConfirmPass">Repetir contraseña <small>*</small></label>
+                    <input name="txtConfirmPass" id="txtConfirmPass" class="form-control" type="password">
+                </div> 
+
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Registrarse </button>
+            </div> <!-- form-group// -->
+
+        </form>
+    </article><!-- card-body.// -->
+</div> <!-- card .// -->
+<!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+{% endblock %}
+
+
+{% block script %}
+<script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/formsquery.js' %}"></script>
+<script src="{% static 'js/funciones.js' %}"></script>
+{% endblock %}

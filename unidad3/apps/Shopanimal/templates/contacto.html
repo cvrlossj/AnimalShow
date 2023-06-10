@@ -1,12 +1,111 @@
-{% extends './base.html' %}
-{% load static %}
+{% extends './base.html' %} 
+{% load static %} 
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-{% endblock %}
-
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<title>AnimalShow | Contacto</title>
+{% endblock %} 
 
 {% block body %}
-<h1>Seccion de contacto</h1>
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg-primary">
+  <div class="container">
+    <h2 class="display-4 fw-bolder text-white">Contacto</h2>
+  </div>
+  <!-- container //  -->
+</section>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-3">
+      <h2>Escribe tus datos</h2>
+      <!-- Formulario con los datos -->
+      <form id="contactoForm">
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- Nombre -->
+            <div class="form-group">
+              <label for="txtNombre">Nombre <small>*</small></label>
+              <input
+                onblur="validarForm()"
+                id="txtNombre"
+                class="form-control"
+                type="text"
+                name="nombre"
+                required
+              />
+              <small id="valNombre">Debe ingresar su nombre</small>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+              <label for="txtEmail">Email <small>*</small></label>
+              <input
+                onblur="validarForm()"
+                id="txtEmail"
+                class="form-control"
+                type="email"
+                name="email"
+                required
+              />
+              <small id="valEmail">Debe ingresar su email</small>
+            </div>
+            <!-- Asunto -->
+            <div class="form-group">
+              <label for="txtAsunto">Asunto <small>*</small></label>
+              <input
+                onblur="validarForm()"
+                id="txtAsunto"
+                class="form-control"
+                type="text"
+                required
+              />
+              <small id="valAsunto">Debe ingresar el asunto</small>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <!-- Pedido -->
+            <div class="form-group">
+              <label>Nº de Pedido (opcional)</label>
+              <input
+                id="pedido"
+                class="form-control"
+                type="text"
+                name="pedido"
+              />
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="txtMensaje" class="form-label"
+              >Mensaje <small>*</small></label
+            >
+            <textarea
+              onblur="validarForm()"
+              id="txtMensaje"
+              class="form-control"
+              rows="3"
+              required
+            ></textarea>
+            <small id="valMensaje">Debe ingresar un mensaje</small>
+          </div>
+
+          <div class="col-3 mb-3 mt-3">
+            <button type="submit" class="btn btn-success">
+              Enviar mensaje
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %} 
+
+{% block script %}
+<script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+<script src="{% static 'js/forms.js' %}"></script>
+<script src="{% static 'js/funciones.js' %}"></script>
+<script src="{% static 'js/carrito.js' %}"></script>
 {% endblock %}

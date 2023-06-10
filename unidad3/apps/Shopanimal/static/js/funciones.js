@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 });
 
+
 // Ocultar Elemento publicidad - sin actualizar la página 
 $("#ocultar").on("click",function(){
     $("#pb").slideUp();
@@ -76,51 +77,10 @@ fetch(url_api).then((response)=>{
 })
 .then((data)=>{
 
-console.log("esta es la data:");
-console.log(data);
-
 //esto para reemplazar las variables que vienen del html
 temperatura.textContent = Math.floor(data.main.temp - kelvin) +"°C";
 
-loc.textContent =data.name + "," +data.sys.country;
 });
 });
 }
 });
-
-
-
-
-
-// Modo oscuro
-const bdark = document.querySelector('#bdark');
-const body= document.querySelector('body');
-
-load();
-
-bdark.addEventListener('click', e =>{
-    body.classList.toggle('darkmode');
-    store(body.classList.contains('darkmode'));
-});
-
-function load(){
-    const darkmode = localStorage.getItem('darkmode');
-
-    if(!darkmode){
-        store('false');
-    }else if(darkmode == 'true'){
-        body.classList.add('darkmode')
-    }
-}
-
-function store(value){
-    localStorage.setItem('darkmode',value);
-}
-
-
-// Clase a un elemento html
-
-var boton = document.getElementById("ocultar");
-
-boton.classList.add("boton-ocultar");
-

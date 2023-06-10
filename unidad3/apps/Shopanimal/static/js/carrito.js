@@ -1,4 +1,3 @@
-
 let carritoContainer = document.getElementById('carrito-container');
 
 function abrirCarrito() {
@@ -41,16 +40,31 @@ function agregarAlCarrito(producto, precio) {
 
   function actualizarCarrito() {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let listaCarrito = document.getElementById('lista-carrito');
-    listaCarrito.innerHTML = '';
-
+    let tablaCarrito = document.getElementById('tabla-carrito');
+    tablaCarrito.innerHTML = '';
+  
     carrito.forEach(function(item) {
-      let li = document.createElement('li');
-      li.textContent = item.producto + ' ($' + item.precio + ') x ' + item.cantidad;
-      listaCarrito.appendChild(li);
+      let fila = document.createElement('tr');
+  
+      let columnaProducto = document.createElement('td');
+      columnaProducto.textContent = item.producto;
+      fila.appendChild(columnaProducto);
+  
+      let columnaPrecio = document.createElement('td');
+      columnaPrecio.textContent = '$' + item.precio;
+      fila.appendChild(columnaPrecio);
+  
+      let columnaCantidad = document.createElement('td');
+      let badgeCantidad = document.createElement('span');
+      badgeCantidad.classList.add('badge', 'bg-primary');
+      badgeCantidad.textContent = item.cantidad;
+      columnaCantidad.appendChild(badgeCantidad);
+      fila.appendChild(columnaCantidad);
+  
+      tablaCarrito.appendChild(fila);
     });
   }
-
+  
   function calcularTotal() {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     let total = 0;
@@ -66,6 +80,4 @@ function agregarAlCarrito(producto, precio) {
     actualizarCarrito();
     calcularTotal();
   };
-
-
 

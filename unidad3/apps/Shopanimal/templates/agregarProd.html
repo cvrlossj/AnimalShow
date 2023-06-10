@@ -1,0 +1,114 @@
+{% extends './baseAdmin.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<title>AnimalShow | Agregar un producto</title>
+{% endblock %} 
+
+
+{% block body %}
+   <!-- Header-->
+   <header class="bg-primary py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Agregar un producto</h1>
+        </div>
+    </div>
+</header>
+
+
+
+<div class="container mt-5">
+    <h1>Completa los campos</h1>
+    <span class="rd-point">* Campos Obligatorios</span>
+</div>
+
+
+<form action="" id="formAgregarProd">
+    <div class="container mt-5 mb-5">
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="form-group mb-3">
+                    <label for="txtSku">SKU <small>*</small></label>
+                    <input name="txtSku" id="txtSku" type="number" class="form-control"
+                        placeholder="SKU del producto">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="txtProducto">Nombre del producto <small>*</small></label>
+                    <input name="txtProducto" id="txtProducto" type="text" class="form-control"
+                        placeholder="Ingrese el nombre del producto">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group mb-3">
+                    <label for="txtPrecio">Precio <small>*</small></label>
+                    <input name="txtPrecio" id="txtPrecio" type="number" class="form-control"
+                        placeholder="Ingrese el precio">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group mb-3">
+                    <label for="txtDesc">Descripción <small>*</small></label>
+                    <input name="txtDesc" id="txtDesc" type="text" class="form-control"
+                        placeholder="Ingrese una descripción para el producto">
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group mb-3">
+                    <label for="txtStock">Stock <small>*</small></label>
+                    <input name="txtStock" id="txtStock" type="number" class="form-control"
+                        placeholder="Registrar el stock">
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="form-group mb-3">
+                    <label for="txtCategoria">Categoria:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option disabled selected>Seleccione</option>
+                        <option value="">1</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="txtImagen">Imagen <small>*</small></label>
+                    <input name="txtImagen" id="txtImagen" type="text" class="form-control"
+                        placeholder="Ingresar la url de la imagen">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          ¿Producto destacado?
+                        </label>
+                      </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Registrar producto</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/formsquery.js' %}"></script>
+{% endblock %}
