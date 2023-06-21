@@ -4,7 +4,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-<title>AnimalShow | Agregar un producto</title>
+<title>AnimalShow | Editar producto</title>
 {% endblock %} 
 
 
@@ -13,7 +13,7 @@
    <header class="bg-primary py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Agregar un producto</h1>
+            <h1 class="display-4 fw-bolder">Editar</h1>
         </div>
     </div>
 </header>
@@ -21,19 +21,19 @@
 
 
 <div class="container mt-5">
-    <h1>Registrar un producto</h1>
+    <h1>Editar el producto</h1>
     <span class="rd-point">* Campos Obligatorios</span>
 </div>
 
 
-<form id="agregarProductoForm" action="/agregarProductoForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+<form action="/editarProductoForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
     <div class="container mt-5 mb-5">
         <div class="row">
 
             <div class="col-md-3">
                 <div class="form-group mb-3">
                     <label for="txtSku">SKU <small>*</small></label>
-                    <input name="txtSku" id="txtSku" type="number" class="form-control"
+                    <input readonly value="{{prod.sku}}" name="txtSku" id="txtSku" type="number" class="form-control"
                         placeholder="SKU del producto">
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="txtProducto">Nombre del producto <small>*</small></label>
-                    <input name="txtProducto" id="txtProducto" type="text" class="form-control"
+                    <input value="{{prod.nombre}}" name="txtProducto" id="txtProducto" type="text" class="form-control"
                         placeholder="Ingrese el nombre del producto">
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="col-md-3">
                 <div class="form-group mb-3">
                     <label for="txtPrecio">Precio <small>*</small></label>
-                    <input name="txtPrecio" id="txtPrecio" type="number" class="form-control"
+                    <input value="{{prod.precio}}" name="txtPrecio" id="txtPrecio" type="number" class="form-control"
                         placeholder="Ingrese el precio">
                 </div>
             </div>
@@ -57,7 +57,7 @@
             <div class="col-md-12">
                 <div class="form-group mb-3">
                     <label for="txtDesc">Descripción <small>*</small></label>
-                    <input name="txtDesc" id="txtDesc" type="text" class="form-control"
+                    <input value="{{prod.descripcion}}" name="txtDesc" id="txtDesc" type="text" class="form-control"
                         placeholder="Ingrese una descripción para el producto">
                 </div>
             </div>
@@ -65,7 +65,7 @@
             <div class="col-md-2">
                 <div class="form-group mb-3">
                     <label for="txtStock">Stock <small>*</small></label>
-                    <input name="txtStock" id="txtStock" type="number" class="form-control"
+                    <input value="{{prod.stock}}" name="txtStock" id="txtStock" type="number" class="form-control"
                         placeholder="Registrar el stock">
                 </div>
             </div>
@@ -76,7 +76,7 @@
                     <select name="cmbCat" id="cmbCat" class="form-select">
                         <option disabled selected>Seleccione</option>
                         {% for c in cate %}
-                        <option value="{{c.id_categoria}}">{{c.nombre_categoria}}</option>
+                        <option value="{{c.id_categoria}}" {% if c.id_categoria == prod.id_categoria.id_categoria %} selected {% endif %}>{{c.nombre_categoria}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -88,7 +88,7 @@
                     <select name="cmbPro" id="cmbPro" class="form-select">
                         <option disabled selected>Seleccione</option>
                         {% for p in prove %}
-                        <option value="{{p.id_proveedor}}">{{p.nombre_proveedor}}</option>
+                        <option value="{{p.id_proveedor}}" {% if p.id_proveedor == prod.id_proveedor.id_proveedor %} selected {% endif %}>{{p.nombre_proveedor}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -97,12 +97,13 @@
             <div class="col-md-4">
                 <div class="form-group mb-3">
                     <label for="txtImagen">Imagen <small>*</small></label>
+                    <img src="{{prod.imagen.url}}" height="100" alt="">
                     <input name="txtImagen" id="txtImagen" type="file" class="form-control">
                 </div>
             </div>
 
             <div class="form-group mt-5">
-                <button type="submit" class="btn btn-success">Registrar producto</button>
+                <button type="submit" class="btn btn-success">Editar producto</button>
             </div>
         </div>
     </div>
