@@ -5,53 +5,89 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <title>AnimalShow | Tienda</title>
-{% endblock %} 
+{% endblock %}
 
 
 {% block body %}
-    <!-- ========================= SECTION PAGETOP ========================= -->
-    <section class="section-pagetop bg-primary">
-        <div class="container">
-            <h2 class="display-4 fw-bolder text-white">Tienda</h2>
-        </div> 
-    </section>
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg-primary">
+    <div class="container">
+        <h2 class="display-4 fw-bolder text-white">Tienda</h2>
+    </div>
+</section>
 
 
 
-        <!-- ========================= LISTA DE PRODUCTOS ========================= -->
-        <section class="">
-            <div class="container px-4 px-lg-5 mt-5">
-                <h2 class="mb-5">Lista de productos</h2>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-
-                        <div class="card h-100">
-                            <!-- SKU badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sku: 01</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://www.pethome.cl/imagenes/productos/2279.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Bandanas de colores para perros</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted">$5.500</span>
-                                </div>
-                            </div>
-    
-                            <!-- <i class="bi bi-caret-right-fill"></i> -->
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button onclick="agregarAlCarrito('Bandana para perros', 5500)"
-                                    class="resaltado">Agregar al carrito <i class="bi bi-caret-right-fill"></i></button></li></div>
-                            </div>
+<!-- ========================= LISTA DE PRODUCTOS ========================= -->
+<section class="">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="mb-5">Perros</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for p in cat_perros %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- SKU badge-->
+                    <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                        {{p.precio}}</div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{p.imagen.url}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{p.nombre}}</h5>
+                            <!-- Product price-->
+                            <span class="text-muted">{{p.descripcion}}</span>
                         </div>
                     </div>
 
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><button onclick="agregarAlCarrito('Bandana para perros', 5500)"
+                                class="resaltado">Agregar al carrito <i class="bi bi-caret-right-fill"></i></button>
+                            </li>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-        </section>
+
+        </div>
+    </div>
+
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="mb-5">Lista de productos</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for p in cat_gatos %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- SKU badge-->
+                    <div class="badge bg-primary text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                        {{p.precio}}</div>
+                    <!-- Product image-->
+                    <img class="card-img-top" src="{{p.imagen.url}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{p.nombre}}</h5>
+                            <!-- Product price-->
+                            <span class="text-muted">{{p.descripcion}}</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><button onclick="agregarAlCarrito('Bandana para perros', 5500)"
+                                class="resaltado">Agregar al carrito <i class="bi bi-caret-right-fill"></i></button>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 

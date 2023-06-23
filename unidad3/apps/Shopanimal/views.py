@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import *
 import os
 from django.conf import settings
+from django.contrib.auth.hashers import check_password
+
 
 # Create your views here.
 
@@ -88,12 +90,35 @@ def eliminarProducto(request,sku):
     return redirect('/lista')
 
 
+def cargarListaCategorias(request):
+    categorias = Categoria.objects.all()
+    return render(request,"agregarCat.html",{"lcate":categorias})
+
+def agregarCategorias(request):
+    c_id = request.POST['txtID']
+    c_nombre = request.POST['txtCategoria']
+    c_descripcion = request.POST['txtDescripcion']
+
+    Categoria.objects.create(id_categoria = c_id, nombre_categoria = c_nombre, descripcion = c_descripcion)
+
+    return redirect('/categorias')
+
+def cargarListaProveedores(request):
+    proveedores = Proveedor.objects.all()
+    return render(request,"agregarProv.html",{"lprove":proveedores})
+
+
+
 def cargarContacto(request):
     return render(request, "contacto.html")
 
 
 def cargarTienda(request):
-    return render(request, "tienda.html")
+    productos = Producto.objects.all()
+    categoria_perros = Producto.objects.filter(id_categoria=1)
+    categoria_gatos = Producto.objects.filter(id_categoria=2)
+    return render(request, "tienda.html", {"prod": productos, "cat_perros": categoria_perros, "cat_gatos": categoria_gatos})
+
 
 
 def cargarRegistrarse(request):

@@ -1,0 +1,84 @@
+{% extends './baseAdmin.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<title>AnimalShow | Proveedores</title>
+{% endblock %} {% block body %}
+<!-- Header-->
+<header class="bg-primary py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Lista de proveedores</h1>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+<div class="container px-4 px-lg-2 mt-5 mb-5">
+  <div class="card">
+      <div class="card-header">
+        Ver/Editar/Eliminar
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+        </blockquote>
+        <table class="table caption-top">
+          <caption>
+            Lista de proveedores
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in lprove %}
+            <tr>
+              <th scope="row">{{p.id_proveedor}}</th>
+              <td>{{p.nombre_proveedor}}</td>
+              <td>{{p.email}}</td>
+              <td>{{p.telefono}}</td>
+              <td>{{p.ciudad}}</td>
+              <td>
+                <a href="/editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block script%}
+<!-- Modal -->
+<div class="modal fade" id="myModalClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
