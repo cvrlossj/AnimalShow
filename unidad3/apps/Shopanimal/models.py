@@ -23,8 +23,8 @@ class Usuario(models.Model):
     id_rol = models.ForeignKey(UsuarioRol, on_delete=models.CASCADE)
 
     def __str__(self):
-        txt = "Usuario: {0} - Rol: {1}"
-        return txt.format(self.nombre, self.id_rol)
+        return self.nombre
+
 
 
 class Categoria(models.Model):

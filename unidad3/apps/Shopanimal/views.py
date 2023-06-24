@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from .models import *
 import os
 from django.conf import settings
-from django.contrib.auth.hashers import check_password
+
 
 
 # Create your views here.
 
 
 def cargarInicio(request):
-    productos = Producto.objects.all()
+    productos = Producto.objects.filter(stock__gt=0)
     categoria_perros = Producto.objects.filter(id_categoria=1)
     categoria_gatos = Producto.objects.filter(id_categoria=2)
     return render(request, "inicio.html", {"prod": productos, "cat_perros": categoria_perros, "cat_gatos": categoria_gatos})
@@ -31,6 +31,7 @@ def agregarProducto(request):
     p_categoria = Categoria.objects.get(id_categoria=request.POST['cmbCat'])
     p_proveedor = Proveedor.objects.get(id_proveedor=request.POST['cmbPro'])
     p_img = request.FILES['txtImagen']
+
 
     Producto.objects.create(sku=p_sku, nombre=p_nombre, precio=p_precio, descripcion=p_descripcion,
                             stock=p_stock, id_categoria=p_categoria, id_proveedor=p_proveedor, imagen=p_img)

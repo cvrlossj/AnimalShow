@@ -88,10 +88,12 @@
               required
             ></textarea>
             <small id="valMensaje">Debe ingresar un mensaje</small>
+            <div id="alerta" class="alert alert-danger mt-2" style="display: none" ></div>
           </div>
 
+
           <div class="col-3 mb-3 mt-3">
-            <button type="submit" class="btn btn-success">
+            <button id="btnEnviar" type="submit" class="btn btn-success">
               Enviar mensaje
             </button>
           </div>
@@ -108,4 +110,5 @@
 <script src="{% static 'js/forms.js' %}"></script>
 <script src="{% static 'js/funciones.js' %}"></script>
 <script src="{% static 'js/carrito.js' %}"></script>
+<script src="{% static 'js/validarContacto.js' %}"></script>
 {% endblock %}

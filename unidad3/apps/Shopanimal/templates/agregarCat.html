@@ -4,102 +4,123 @@
 {% endblock %} {% block body %}
 <!-- Header-->
 <header class="bg-primary py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Listado de categorias</h1>
-        </div>
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Listado de categorias</h1>
     </div>
+  </div>
 </header>
 
 <div class="container mt-5">
-    <caption>
-        Lista de categorias
-    </caption><br>
-    <span class="rd-point">* Campos Obligatorios</span>
+  <caption>
+    Lista de categorias
+  </caption>
+  <br />
+  <span class="rd-point">* Campos Obligatorios</span>
 </div>
 
-
-<form id="agregarCategoriaForm" action="/agregarCategoriaForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group mb-3">
-                    <label for="txtID">ID <small>*</small></label>
-                    <input name="txtID" id="txtID" type="number" class="form-control"
-                        placeholder="ID de la categoria" />
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="form-group mb-3">
-                    <label for="txtCategoria">Nombre de la categoria <small>*</small></label>
-                    <input name="txtCategoria" id="txtCategoria" type="text" class="form-control"
-                        placeholder="Nombre categoria" />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group mb-3">
-                    <label for="txtDescripcion">Descripción <small>*</small></label>
-                    <input name="txtDescripcion" id="txtDescripcion" type="text" class="form-control"
-                        placeholder="Descripcion categoria" />
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="form-group mt-4">
-                    <button type="submit" class="btn btn-success">
-                        Registrar categoria
-                    </button>
-                </div>
-            </div>
-
+<form
+  id="agregarCategoriaForm"
+  action="/agregarCategoriaForm"
+  method="POST"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group mb-3">
+          <label for="txtID">ID <small>*</small></label>
+          <input
+            name="txtID"
+            id="txtID"
+            type="number"
+            class="form-control"
+            placeholder="ID de la categoria"
+          />
         </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group mb-3">
+          <label for="txtCategoria"
+            >Nombre de la categoria <small>*</small></label
+          >
+          <input
+            name="txtCategoria"
+            id="txtCategoria"
+            type="text"
+            class="form-control"
+            placeholder="Nombre categoria"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="txtDescripcion">Descripción <small>*</small></label>
+          <input
+            name="txtDescripcion"
+            id="txtDescripcion"
+            type="text"
+            class="form-control"
+            placeholder="Descripcion categoria"
+          />
+        </div>
+      </div>
+
+      <div id="alerta" class="alert alert-danger" style="display: none"></div>
+
+      <div class="col-md-3">
+        <div class="form-group mt-4">
+          <button id="btnEnviar" type="submit" class="btn btn-success">
+            Registrar categoria
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </form>
 
 <div class="container px-4 px-lg-2 mt-5 mb-5">
-    <div class="card">
-        <div class="card-header">
-          Ver/Editar
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-          </blockquote>
-          <table class="table caption-top">
-            <caption>
-              Lista de categorias
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre de la categoria</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Acciones</th>
-      
-              </tr>
-            </thead>
-            <tbody>
-              {% for c in lcate %}
-              <tr>
-                <th scope="row">{{c.id_categoria}}</th>
-                <td>{{c.nombre_categoria}}</td>
-                <td>{{c.descripcion}}</td>
-      
-                <td>
-                  <a href="/editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a>
-                </td>
-              </tr>
-              {% endfor %}
-           
-            </tbody>
-          </table>
-        </div>
-      </div>
-</div>
+  <div class="card">
+    <div class="card-header">Ver/Editar</div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0"></blockquote>
+      <table class="table caption-top">
+        <caption>
+          Lista de categorias
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre de la categoria</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in lcate %}
+          <tr>
+            <th scope="row">{{c.id_categoria}}</th>
+            <td>{{c.nombre_categoria}}</td>
+            <td>{{c.descripcion}}</td>
 
+            <td>
+              <a href="/editarProducto/{{p.sku}}" class="btn btn-primary"
+                >Editar</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 {% endblock %} {% block script %}
 <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
 <script src="{% static 'js/jquery.validate.min.js' %}"></script>
 <script src="{% static 'js/formsquery.js' %}"></script>
+<script src="{% static 'js/validarCategoria.js' %}"></script>
 {% endblock %}
