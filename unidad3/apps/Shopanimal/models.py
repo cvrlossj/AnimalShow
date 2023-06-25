@@ -13,18 +13,18 @@ class UsuarioRol(models.Model):
 
 
 class Usuario(models.Model):
-    id_usuario = models.IntegerField(primary_key=True)
+    id_usuario = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     rut = models.CharField(max_length=30)
     email = models.CharField(max_length=100)
     telefono = models.CharField(max_length=50)
     contrasenia = models.CharField(max_length=100)
-    id_rol = models.ForeignKey(UsuarioRol, on_delete=models.CASCADE)
+    id_rol = models.ForeignKey(UsuarioRol, on_delete=models.CASCADE, default=2)
 
     def __str__(self):
-        return self.nombre
-
+        txt = "Nombre: {0} - id: {1}"
+        return txt.format(self.nombre, self.id_usuario)
 
 
 class Categoria(models.Model):

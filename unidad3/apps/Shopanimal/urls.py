@@ -10,11 +10,14 @@ urlpatterns = [
     path('eliminarProducto/<sku>',views.eliminarProducto),
     path('categorias',views.cargarListaCategorias),
     path('agregarCategoriaForm',views.agregarCategorias),
+    path('editarCategoria/<id_categoria>', views.cargarEditarCategoria),
+    path('editarCategoriaForm',views.editarCategoria),
+    path('eliminarCategoria/<id_categoria>',views.eliminarCategoria),
     path('proveedores',views.cargarListaProveedores),
     path('contacto', views.cargarContacto),
     path('tienda', views.cargarTienda),
     path("registrarse", views.cargarRegistrarse),
+    path("registrarUsuarioForm",views.agregarUsuario),
     path('login', views.cargarLogin),
-    path('panel', views.cargarAdministrador),
-    path('lista', views.cargarListaProdAdministrador)
+    path('lista', views.cargarListaProdAdministrador),
 ]

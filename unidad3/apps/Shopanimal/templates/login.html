@@ -1,25 +1,36 @@
-{% extends './base.html' %} 
-{% load static %} 
-
-{% block head %}
+{% extends './base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <title>AnimalShow | Iniciar sesión</title>
-{% endblock %} 
-
-{% block body %}
+{% endblock %} {% block body %}
 
 <!-- ============================ COMPONENT LOGIN   ================================= -->
 <div class="card mx-auto mb-5" style="max-width: 380px; margin-top: 100px">
   <div class="card-body">
     <h4 class="card-title mb-4">Completa tus datos</h4>
-    <form>
+    <form method="POST">
+      {% csrf_token %}
       <div class="form-group">
-        <input name="txtEmail" type="email" class="form-control" placeholder="Email" />
+        <input
+          name="txtEmail"
+          type="email"
+          class="form-control"
+          placeholder="Email"
+        />
       </div>
       <!-- form-group// -->
       <div class="form-group">
-        <input name="txtContrasenia" type="password" class="form-control" placeholder="Contraseña" />
+        <input
+          name="txtContrasenia"
+          type="password"
+          class="form-control"
+          placeholder="Contraseña"
+        />
       </div>
+
+      <div class="error-message">
+        {% if error_message %} {{ error_message }} {% endif %}
+      </div>
+
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block">Entrar</button>
       </div>
@@ -28,7 +39,6 @@
   </div>
   <!-- card-body.// -->
 </div>
-<!-- card .// -->
 <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
 
 {% endblock %} {% block script %}

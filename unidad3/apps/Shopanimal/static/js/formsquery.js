@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
 $(function(){
-    $("#miFormulario").validate({
+    $("#registrarUsuarioForm").validate({
         rules:{
             txtNombre:{
                 required: true,
@@ -23,6 +23,10 @@ $(function(){
                 required: true,
                 minlength: 5,
                 email: true
+            },
+            txtTelefono:{
+                required: true,
+                minlength: 5,
             },
             txtPassword:{
                 required: true
@@ -44,11 +48,15 @@ $(function(){
             },
             txtRut:{
                 required: "Campo obligatorio",
-                minlength: "El largo mínimo es de 5 caracteres",
+                minlength: "El largo mínimo es de 5 caracteres"
             },
             txtEmail:{
                 required: "Campo obligatorio",
                 email: "Ingrese un email válido"
+            },
+            txtTelefono:{
+                required: "Campo obligatorio",
+                minlength: "El largo mínimo es de 5 caracteres"
             },
             txtPassword:{
                 required: "Campo obligatorio"
@@ -108,4 +116,18 @@ $(function(){
 
 
 })
+
+function validarContrasenia(){
+    var contrasenia = document.getElementById('txtPassword').value;
+    var repetirContrasenia = document.getElementById('txtConfirmPass').value;
+    var mensajeError = document.getElementById('mensajeError');
+
+    if (contrasenia !== repetirContrasenia){
+        mensajeError.style.display = 'block';
+        return false;
+    }else {
+        mensajeError.style.display = 'none';
+        return true;
+    }
+}
 

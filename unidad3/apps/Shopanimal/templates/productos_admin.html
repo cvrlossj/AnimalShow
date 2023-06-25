@@ -1,7 +1,10 @@
 {% extends './baseAdmin.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <!-- DataTables -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+/>
 <title>AnimalShow | Productos</title>
 {% endblock %} {% block body %}
 <!-- Header-->
@@ -14,12 +17,23 @@
 </header>
 
 <!-- MODALS  -->
-<div class="modal fade" id="eliminarProd" tabindex="-1" aria-labelledby="eliminarProd" aria-hidden="true">
+<div
+  class="modal fade"
+  id="eliminarProd"
+  tabindex="-1"
+  aria-labelledby="eliminarProd"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="eliminarProd">Eliminar producto</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         ¿Estás seguro que deseas eliminar el producto?
@@ -28,13 +42,21 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Cancelar
         </button>
-        <a href="/eliminarProducto/{{p.sku}}" class="btn btn-danger">Eliminar</a>
+        <a href="/eliminarProducto/{{p.sku}}" class="btn btn-danger"
+          >Eliminar</a
+        >
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
+  <a href="/agregarproducto" class="btn btn-primary mt-2"
+    ><i class="bi bi-plus-circle-fill"></i> Agregar nuevo producto</a
+  >
+</div>
+
+<div class="container mt-4 mb-4">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
       <div class="table-responsive">
@@ -67,7 +89,9 @@
               <td>{{p.id_categoria}}</td>
               <td>{{p.id_proveedor}}</td>
               <td>
-                <a href="/editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a>
+                <a href="/editarProducto/{{p.sku}}" class="btn btn-primary"
+                  >Editar</a
+                >
                 <a href="/eliminarProducto/{{p.sku}}" class="btn btn-danger"
                   >Eliminar</a
                 >
@@ -78,22 +102,14 @@
         </table>
       </div>
     </div>
-
   </div>
 </div>
 
-
-
-
 {% block script %}
-
 
 <!-- JQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <!-- DataTables.js -->
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-{% endblock %}
-
-
-{% endblock %}
+{% endblock %} {% endblock %}

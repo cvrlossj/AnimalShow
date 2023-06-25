@@ -22,4 +22,7 @@ document.getElementById("btnEnviar").addEventListener("click", function(event) {
 
       document.getElementById("agregarProductoForm").submit();
     }
+    
   });
+
+

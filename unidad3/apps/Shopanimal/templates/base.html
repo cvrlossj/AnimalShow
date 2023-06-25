@@ -32,7 +32,7 @@
           <h2 class="navbar-brand text-white" id="reloj"></h2>
 
           <div class="d-flex text-white">
-            <p>
+            <p class="text-black">
               La temperatura actual es: <i class="bi bi-thermometer"></i
               ><span class="temp" style="font-weight: bolder"></span>
             </p>
@@ -90,7 +90,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/panel">Administrador</a>
+                <a class="nav-link" href="/lista">Administrador</a>
               </li>
               <div>
                 <button class="btn btn-dark" id="bdark">Modo oscuro</button>
@@ -113,49 +113,62 @@
       </nav>
 
       {% comment %} Carrito Class Inicio {% endcomment %}
-    
-        <div class="carrito">
-          <div class="offcanvas offcanvas-end text-black" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-              <div class="offcanvas-header bg-primary">
-                  <h5 class="offcanvas-title text-white" id="offcanvasRightLabel">Mi carrito</h5>
-                  <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
 
-              <div class="offcanvas-body">
-                  <div class="container">
-                      <div class="row">
-                          <div id="carrito">
-                              <table class="table">
-                                  <thead class="">
-                                      <tr>
-                                          <th scope="col">Producto</th>
-                                          <th scope="col">Precio</th>
-                                          <th scope="col">Cantidad</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody id="tabla-carrito">
-                                  </tbody>
-                              </table>
-                          </div>
-                      </div>
-                  </div>
+      <div class="carrito">
+        <div
+          class="offcanvas offcanvas-end text-black"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header bg-primary">
+            <h5 class="offcanvas-title text-white" id="offcanvasRightLabel">
+              Mi carrito
+            </h5>
+            <button
+              type="button"
+              class="btn-close bg-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <div class="container">
+              <div class="row">
+                <div id="carrito">
+                  <table class="table">
+                    <thead class="">
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tabla-carrito"></tbody>
+                  </table>
+                </div>
               </div>
-              <div class="offcanvas-footer">
-                  <div class="container">
-                      <div class="row">
-                          <div class="col">
-                              <p>Total: $<span id="total-carrito">0</span></p>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col">
-                              <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button>
-                          </div>
-                      </div>
-                  </div>
+            </div>
+          </div>
+          <div class="offcanvas-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <p>Total: $<span id="total-carrito">0</span></p>
+                </div>
               </div>
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-danger" onclick="vaciarCarrito()">
+                    Vaciar carrito
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
       {% comment %} Carrito Class Fin {% endcomment %}
     </header>
 

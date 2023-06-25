@@ -22,7 +22,8 @@
         <header class="mb-4">
             <h4 class="card-title">Información Personal</h4>
         </header>
-        <form action="" id="miFormulario">
+        <form action="/registrarUsuarioForm" method="POST" id="registrarUsuarioForm" onsubmit="return validarContrasenia();" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="form-row">
                 <!-- Nombres -->
                 <div class="col form-group">
@@ -47,6 +48,12 @@
 
             </div> <!-- form-group end.// -->
 
+            <div class="form-group">
+                <label for="txtTelefono">Telefono <small>*</small></label>
+                <input name="txtTelefono" id="txtTelefono" type="text" class="form-control">
+
+            </div> <!-- form-group end.// -->
+
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="txtPassword">Contraseña <small>*</small></label>
@@ -58,6 +65,10 @@
                     <input name="txtConfirmPass" id="txtConfirmPass" class="form-control" type="password">
                 </div> 
 
+
+                <div id="mensajeError" class="alert alert-danger" style="display: none;">
+                    Las contraseñas no coinciden.
+                </div>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Registrarse </button>
