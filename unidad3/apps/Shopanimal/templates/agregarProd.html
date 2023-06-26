@@ -16,6 +16,7 @@
   <span class="rd-point">* Campos Obligatorios</span>
 </div>
 
+
 <form id="agregarProductoForm" action="/agregarProductoForm" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="container mt-5 mb-5">
@@ -87,7 +88,6 @@
           <input name="txtImagen" id="txtImagen" type="file" class="form-control" accept=".jpg,.png" />
         </div>
       </div>
-      <div id="alerta" class="alert alert-danger" style="display: none"></div>
 
       <div class="form-group mt-5">
         <button id="btnEnviar" type="submit" class="btn btn-success">
@@ -98,10 +98,37 @@
   </div>
 </form>
 
-{% endblock %} {% block script %}
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="toastErrorSku" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        El Sku ingresado ya se encuentra registrado.
+    </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="toastError" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Todos los campos son obligatorios
+    </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %} 
+
+{% block script %}
 <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
 <script src="{% static 'js/jquery.validate.min.js' %}"></script>
 <script src="{% static 'js/formsquery.js' %}"></script>
-<script src="{% static 'js/validarProductos.js' %}"></script>
-
+<script src="{% static 'js/agregarProducto.js' %}"></script>
 {% endblock %}

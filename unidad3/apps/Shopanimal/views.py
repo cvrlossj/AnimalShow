@@ -105,7 +105,6 @@ def agregarCategorias(request):
     return redirect('/categorias')
 
 
-
 def cargarEditarCategoria(request, id_categoria):
     categorias = Categoria.objects.get(id_categoria=id_categoria)
     return render(request, "editarCat.html", {"cate": categorias})
@@ -124,16 +123,52 @@ def editarCategoria(request):
 
     return redirect('/categorias')
 
+
 def eliminarCategoria(request, id_categoria):
     categoria = Categoria.objects.get(id_categoria=id_categoria)
     categoria.delete()
     return redirect('/categorias')
 
 
-
 def cargarListaProveedores(request):
     proveedores = Proveedor.objects.all()
     return render(request, "agregarProv.html", {"lprove": proveedores})
+
+
+def agregarProveedores(request):
+    p_id = request.POST['txtID']
+    p_nombre = request.POST['txtNombre']
+    p_email = request.POST['txtEmail']
+    p_telefono = request.POST['txtTel']
+    p_ciudad = request.POST['txtCiudad']
+
+    Proveedor.objects.create(id_proveedor=p_id, nombre_proveedor=p_nombre,
+                             email=p_email, telefono=p_telefono, ciudad=p_ciudad)
+
+    return redirect('/proveedores')
+
+
+def editarProveedores(request):
+    p_id = request.POST['txtID']
+    proveedoresBD = Proveedor.objects.get(id_proveedor=p_id)
+    p_nombre = request.POST['txtNombre']
+    p_email = request.POST['txtEmail']
+    p_telefono = request.POST['txtTel']
+    p_ciudad = request.POST['txtCiudad']
+
+    proveedoresBD.nombre_proveedor = p_nombre
+    proveedoresBD.email = p_email
+    proveedoresBD.telefono = p_telefono
+    proveedoresBD.ciudad = p_ciudad
+
+    proveedoresBD.save()
+
+    return redirect('/proveedores')
+
+
+def cargarEditarProveedores(request, id_proveedor):
+    proveedores = Proveedor.objects.get(id_proveedor=id_proveedor)
+    return render(request, "editarProv.html", {"prove": proveedores})
 
 
 def cargarContacto(request):
@@ -166,7 +201,4 @@ def agregarUsuario(request):
 
 
 def cargarLogin(request):
-    return render(request, 'login.html')
-
-
-
+    return render(request, "login.html")

@@ -1,0 +1,128 @@
+{% extends './baseAdmin.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<title>AnimalShow | Proveedores</title>
+{% endblock %} {% block body %}
+<!-- Header-->
+<header class="bg-primary py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Lista de proveedores</h1>
+    </div>
+  </div>
+</header>
+
+<form action="/editarProveedorForm" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <label for="txtID">ID <small>*</small></label>
+          <input
+            readonly
+            value="{{prove.id_proveedor}}"
+            name="txtID"
+            id="txtID"
+            type="number"
+            class="form-control"
+            placeholder="ID del proveedor"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <label for="txtNombre">Nombre del proveedor <small>*</small></label>
+          <input
+            value="{{prove.nombre_proveedor}}"
+            name="txtNombre"
+            id="txtNombre"
+            type="text"
+            class="form-control"
+            placeholder="Ingrese el nombre del proveedor"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <label for="txtEmail">Email <small>*</small></label>
+          <input
+            value="{{prove.email}}"
+            name="txtEmail"
+            id="txtEmail"
+            type="text"
+            class="form-control"
+            placeholder="Ingrese el email"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group mb-3">
+          <label for="txtTel">Teléfono <small>*</small></label>
+          <input
+            value="{{prove.telefono}}"
+            name="txtTel"
+            id="txtTel"
+            type="text"
+            class="form-control"
+            placeholder="Ingrese el teléfono"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-group mb-3">
+          <label for="txtCiudad">Ciudad <small>*</small></label>
+          <input
+            value="{{prove.ciudad}}"
+            name="txtCiudad"
+            id="txtCiudad"
+            type="text"
+            class="form-control"
+            placeholder="Ingrese la ciudad"
+          />
+        </div>
+      </div>
+
+      <div class="form-group mt-2">
+        <button id="btnEnviar" type="submit" class="btn btn-success">
+         Guardar cambios
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% endblock %} {% block script%}
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="myModalClient"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
