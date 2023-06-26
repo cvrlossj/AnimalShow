@@ -202,3 +202,5 @@ def agregarUsuario(request):
 
 def cargarLogin(request):
     return render(request, "login.html")
+
+
