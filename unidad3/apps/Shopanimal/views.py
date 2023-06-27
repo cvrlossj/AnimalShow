@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .models import *
 import os
 from django.conf import settings
-
 # Create your views here.
 
 
@@ -202,5 +201,32 @@ def agregarUsuario(request):
 
 def cargarLogin(request):
     return render(request, "login.html")
+
+
+def Login(request):
+    if request.method == 'POST':
+        email = request.POST['txtEmail']
+        password = request.POST['txtPassword']
+
+        try:
+            usuario = Usuario.objects.get(email=email)
+            if usuario.contrasenia == password:
+                # La contraseña es correcta, puedes realizar la redirección según el rol
+                if usuario.id_rol_id == 2:
+                    request.session['nombre_usuario'] = usuario.nombre
+                    return redirect('/tienda')
+                elif usuario.id_rol_id == 1:
+                    request.session['nombre_usuario'] = usuario.nombre
+                    return redirect('/lista')
+            else:
+                error_message = "Contraseña incorrecta"
+                return render(request, 'login.html', {'error_message': error_message})
+
+        except Usuario.DoesNotExist:
+            error_message = "Usuario no encontrado"
+            return render(request, 'login.html', {'error_message': error_message})
+            
+    return render(request, "login.html")
+
 
 

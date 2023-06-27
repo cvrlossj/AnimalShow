@@ -83,10 +83,9 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <button onclick="agregarAlCarrito('Bandana para perros', 5500)"
-                                    class="resaltado">Agregar al carrito 
-                                    <i class="bi bi-caret-right-fill"></i></button></li>
+                                <div class="text-center"><button onclick="agregarAlCarrito('{{p.nombre}}', '{{p.precio}}','{{p.sku}}','{{p.stock}}')"
+                                        class="resaltado">Agregar al carrito <i class="bi bi-caret-right-fill"></i></button>
+                                    </li>
                                 </div>
                             </div>
                         </div>
@@ -121,11 +120,11 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
+
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <button onclick="agregarAlCarrito('Bandana para perros', 5500)"
-                                    class="resaltado">Agregar al carrito 
-                                    <i class="bi bi-caret-right-fill"></i></button></li>
+                                <div class="text-center"><button onclick="agregarAlCarrito('{{p.nombre}}', '{{p.precio}}','{{p.sku}}','{{p.stock}}')"
+                                        class="resaltado">Agregar al carrito <i class="bi bi-caret-right-fill"></i></button>
+                                    </li>
                                 </div>
                             </div>
                         </div>
