@@ -21,6 +21,7 @@ urlpatterns = [
     path("registrarse", views.cargarRegistrarse),
     path("registrarUsuarioForm", views.agregarUsuario),
     path('login', views.cargarLogin),
-    path('entrar', views.Login),
+    path('iniciarSesionForm',views.iniciarSesion),
+    path('cerrarSesion',views.cerrarSesion),
     path('lista', views.cargarListaProdAdministrador),
 ]

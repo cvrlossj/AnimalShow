@@ -5,5 +5,5 @@ from .models import *
 admin.site.register(Categoria)
 admin.site.register(Proveedor)
 admin.site.register(Producto)
-admin.site.register(UsuarioRol)
+admin.site.register(TipoUsuario)
 admin.site.register(Usuario)

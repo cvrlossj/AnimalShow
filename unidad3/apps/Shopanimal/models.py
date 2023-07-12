@@ -3,13 +3,13 @@ from django.db import models
 # Create your models here.
 
 
-class UsuarioRol(models.Model):
-    id_rol = models.IntegerField(primary_key=True)
-    rol = models.CharField(max_length=100)
+class TipoUsuario(models.Model):
+    id_tipo = models.IntegerField(primary_key=True)
+    nombre_tipo = models.CharField(max_length=100)
 
     def __str__(self):
-        txt = "Rol: {0} - id: {1}"
-        return txt.format(self.rol, self.id_rol)
+        txt = "Nombre: {0} - id: {1}"
+        return txt.format(self.nombre_tipo, self.id_tipo)
 
 
 class Usuario(models.Model):
@@ -20,7 +20,7 @@ class Usuario(models.Model):
     email = models.CharField(max_length=100)
     telefono = models.CharField(max_length=50)
     contrasenia = models.CharField(max_length=100)
-    id_rol = models.ForeignKey(UsuarioRol, on_delete=models.CASCADE, default=2)
+    id_tipo = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE, default=2)
 
     def __str__(self):
         txt = "Nombre: {0} - id: {1}"

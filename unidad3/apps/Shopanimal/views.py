@@ -1,22 +1,26 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import *
 import os
 from django.conf import settings
+from django.core.exceptions import ValidationError
 # Create your views here.
 
 
 def cargarInicio(request):
+    tipoUsuario = request.session.get('tipoUsuario', None)
     productos = Producto.objects.filter(stock__gt=0)
     categoria_perros = Producto.objects.filter(id_categoria=1)
     categoria_gatos = Producto.objects.filter(id_categoria=2)
-    return render(request, "inicio.html", {"prod": productos, "cat_perros": categoria_perros, "cat_gatos": categoria_gatos})
+    return render(request, "inicio.html", {"prod": productos, "cat_perros": categoria_perros, "cat_gatos": categoria_gatos, "tipoUsuario":tipoUsuario})
 
 
 def cargarAgregarProducto(request):
+    tipoUsuario = request.session.get('tipoUsuario', None)
     categorias = Categoria.objects.all()
     proveedores = Proveedor.objects.all()
     productos = Producto.objects.all()
-    return render(request, "agregarProd.html", {"cate": categorias, "prove": proveedores, "prod": productos})
+    return render(request, "agregarProd.html", {"cate": categorias, "prove": proveedores, "prod": productos, "tipoUsuario":tipoUsuario})
 
 
 def agregarProducto(request):
@@ -43,10 +47,11 @@ def cargarListaProdAdministrador(request):
 
 
 def cargarEditarProducto(request, sku):
+    tipoUsuario = request.session.get('tipoUsuario', None)
     productos = Producto.objects.get(sku=sku)
     categorias = Categoria.objects.all()
     proveedores = Proveedor.objects.all()
-    return render(request, "editarProd.html", {"prod": productos, "cate": categorias, "prove": proveedores})
+    return render(request, "editarProd.html", {"prod": productos, "cate": categorias, "prove": proveedores, "tipoUsuario":tipoUsuario})
 
 
 def editarProducto(request):
@@ -89,8 +94,9 @@ def eliminarProducto(request, sku):
 
 
 def cargarListaCategorias(request):
+    tipoUsuario = request.session.get('tipoUsuario', None)
     categorias = Categoria.objects.all()
-    return render(request, "agregarCat.html", {"lcate": categorias})
+    return render(request, "agregarCat.html", {"lcate": categorias, "tipoUsuario":tipoUsuario})
 
 
 def agregarCategorias(request):
@@ -105,8 +111,9 @@ def agregarCategorias(request):
 
 
 def cargarEditarCategoria(request, id_categoria):
+    tipoUsuario = request.session.get('tipoUsuario', None)
     categorias = Categoria.objects.get(id_categoria=id_categoria)
-    return render(request, "editarCat.html", {"cate": categorias})
+    return render(request, "editarCat.html", {"cate": categorias, "tipoUsuario":tipoUsuario})
 
 
 def editarCategoria(request):
@@ -130,8 +137,9 @@ def eliminarCategoria(request, id_categoria):
 
 
 def cargarListaProveedores(request):
+    tipoUsuario = request.session.get('tipoUsuario', None)
     proveedores = Proveedor.objects.all()
-    return render(request, "agregarProv.html", {"lprove": proveedores})
+    return render(request, "agregarProv.html", {"lprove": proveedores, "tipoUsuario":tipoUsuario})
 
 
 def agregarProveedores(request):
@@ -167,22 +175,26 @@ def editarProveedores(request):
 
 def cargarEditarProveedores(request, id_proveedor):
     proveedores = Proveedor.objects.get(id_proveedor=id_proveedor)
-    return render(request, "editarProv.html", {"prove": proveedores})
+    return render(request, "editarProv.html", {"prove": proveedores,})
 
 
 def cargarContacto(request):
-    return render(request, "contacto.html")
+    tipoUsuario = request.session.get('tipoUsuario', None)
+    return render(request, "contacto.html", {"tipoUsuario":tipoUsuario})
 
 
 def cargarTienda(request):
+    tipoUsuario = request.session.get('tipoUsuario', None)
     productos = Producto.objects.all()
     categoria_perros = Producto.objects.filter(id_categoria=1)
     categoria_gatos = Producto.objects.filter(id_categoria=2)
-    return render(request, "tienda.html", {"prod": productos, "cat_perros": categoria_perros, "cat_gatos": categoria_gatos})
+    return render(request, "tienda.html", {"prod": productos, "cat_perros": categoria_perros, "cat_gatos": categoria_gatos, "tipoUsuario":tipoUsuario})
 
 
 def cargarRegistrarse(request):
-    return render(request, "registrarse.html")
+    tipoUsuario = request.session.get('tipoUsuario', None)
+    tipoUser = TipoUsuario.objects.all()
+    return render(request, "registrarse.html", {"tipo":tipoUser, "tipoUsuario":tipoUsuario})
 
 
 def agregarUsuario(request):
@@ -200,33 +212,38 @@ def agregarUsuario(request):
 
 
 def cargarLogin(request):
-    return render(request, "login.html")
+    tipoUsuario = request.session.get('tipoUsuario', None)
+    return render(request, "login.html", {"tipoUsuario":tipoUsuario})
 
 
-def Login(request):
+def iniciarSesion(request):
     if request.method == 'POST':
-        email = request.POST['txtEmail']
-        password = request.POST['txtPassword']
+            email = request.POST.get('txtEmail')
+            password = request.POST.get('txtPassword')
 
-        try:
-            usuario = Usuario.objects.get(email=email)
-            if usuario.contrasenia == password:
-                # La contraseña es correcta, puedes realizar la redirección según el rol
-                if usuario.id_rol_id == 2:
-                    request.session['nombre_usuario'] = usuario.nombre
-                    return redirect('/tienda')
-                elif usuario.id_rol_id == 1:
-                    request.session['nombre_usuario'] = usuario.nombre
-                    return redirect('/lista')
+            usuarios = Usuario.objects.filter(email=email)
+            if usuarios.exists():
+                usuario = usuarios.first()
+                if usuario.contrasenia == password:
+                    # Las credenciales son correctas, puedes iniciar sesión
+                    request.session['tipoUsuario'] = usuario.id_tipo.nombre_tipo
+                    if usuario.id_tipo.id_tipo == 2:
+                        return redirect('/')  # Redirige a la página de inicio o a la que desees
+                    else:
+                        return redirect('/lista')
+                else:
+                    # La contraseña es incorrecta
+                    mensaje = 'Contraseña incorrecta'
+                    return render(request, 'login.html', {'mensaje': mensaje, 'correo': correo})
             else:
-                error_message = "Contraseña incorrecta"
-                return render(request, 'login.html', {'error_message': error_message})
+                # El correo no está registrado en el sistema
+                mensaje = 'El correo no está registrado'
+                return render(request, 'login.html', {'mensaje': mensaje, 'correo': correo})
 
-        except Usuario.DoesNotExist:
-            error_message = "Usuario no encontrado"
-            return render(request, 'login.html', {'error_message': error_message})
-            
-    return render(request, "login.html")
+
+def cerrarSesion(request):
+    request.session['tipoUsuario'] = None
+    return redirect('/login')
 
 
 
